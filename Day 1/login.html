@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: black;
+        }
+        
+        .flexbox{
+            display: flex;
+            width: 800px;
+            background-color: white;
+            border: 2px solid black;
+            margin: auto;
+            padding: 50px;
+            padding-bottom: 220px;
+        }
+
+        #box1{
+            flex-direction: row;
+        }
+
+        .flexbox div {
+             margin: 1px;
+             margin-right: 180px;
+             padding: 20px;
+             font-size: 25px;
+            }
+
+            button{
+                background-color: black;
+                color: #ffffff;
+                width: 255px;
+                padding: 12px;
+                margin-top: 5px;
+                font-size: 22px;
+            }
+
+            .p{
+                color: red;
+                font-size: 17px;
+            }
+
+            .mg{
+                margin-bottom: 20px;
+                height: 30px;
+                width: 250px;
+            }
+
+            input{
+                border: 2px solid black ;
+            }
+
+            .box2{
+                background-color: black;
+                color: white;
+                font-size: 20px;
+            }
+
+            .p2{
+                 margin:0;
+                 padding:0;
+            }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="flexbox" id="box1"> 
+        <div>
+             <label for="fname">NAME:</label><br>
+                <input class="mg" type="text"><br>
+                <label for="EMAIL">EMAIL:</label><br>
+                <input class="mg" type="email"><br>
+                <label for="phone">MOBILE</label><br>
+                <input style="height: 30px; width: 250px;" 30px;" type="tel"><br>
+                <p class="p">Enter a valid Number</p>
+                <button>REGISTER</button>
+            </div>
+
+      <div class="box2">
+          <p> </p>
+        <P class="p2">NAME<br></P> 
+        <p class="p2" style="font-size: 30px;">BrainstromForce</p>
+          <P style="margin-top: 50px;">EMAIL<br>email@BrainstromForce.com</p>
+          <P style="margin-top: 50px;">MOBILE<br>9022395264</p>
+
+      </div>
+    </div>
+    
+</body>
+</html>
