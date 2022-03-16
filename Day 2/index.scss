@@ -63,21 +63,6 @@ body {
           }
         }
       }
-        .icon {
-          height: 6rem;
-          width: 6.3rem;
-          border-radius: 100%;
-          border: $pinkOutline 0.1rem solid;
-          @include enableFlex();
-          background-color: $formBackgroundColor;
-          box-shadow: -0.5rem 0px $formBackgroundColor;
-
-          img {
-            height: 4rem;
-          }
-        }
-      }
-    }
     .main-form {
       @include enableFlex(true);
       button {
@@ -115,38 +100,6 @@ input {
 @media only screen and (max-width: 768px) {
   .container {
     height: 35rem;
-    .section-one {
-      .social-links {
-        .facebook {
-          left: -8.2rem;
-          span {
-            font-size: small;
-            padding-right: 0.9rem;
-          }
-          .icon {
-            height: 4rem;
-            width: 4rem;
-            border-radius: 100%;
-            img {
-              height: 3rem;
-            }
-          }
-        }
-        .twitter {
-          right: -10rem;
-          span {
-            font-size: small;
-          }
-          .icon {
-            height: 4rem;
-            width: 4rem;
-            border-radius: 100%;
-            img {
-              height: 3rem;
-            }
-          }
-        }
-      }
       .main-form {
         input {
           width: 15rem;
