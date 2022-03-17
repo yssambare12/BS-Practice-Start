@@ -1,0 +1,62 @@
+<!-- In this demo app i revised my promises and settimeout and setinerval concept and i try to apply this  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>McDonald's Food Ticketing System</h1>
+    <input type="checkbox" id="food1"/>
+    <label>Pizza</label>
+    <button id="food1"onclick="myFunction(this)">Order Now</button><br><br>
+    <input type="checkbox" id="food2"/>
+    <label>Maggi</label>
+    <button id="food2"onclick="myFunction(this)">Order Now</button><br><br>
+    <input type="checkbox" id="food3"/>
+    <label>Nuddels</label>
+    <button id="food3"onclick="myFunction(this)">Order Now</button>
+    </form>
+</body>
+</html>
+
+<script>
+
+var arr= [];
+function myFunction(inputCB) {
+  arr.push(inputCB.id);
+  console.log(arr);
+
+
+  let myPromise = new Promise(function (resolve, reject) {
+        
+        setInterval(function () {
+        if (arr[0] ===  food1 || food2 || food3) {
+            resolve('Pizza Is ready Take Your Order');
+        } else if(arr[1] === food2) {
+            resolve('Maggi Is ready Take Your Order');
+        }
+    },5000);
+    console.log("wait 5 sec")
+
+    setTimeout(function(){
+    document.getElementById('');
+    alert("Order Id = 110")
+},5100);
+
+setTimeout(function(){
+    document.getElementById('pizzaa').style.display = 'block';
+},4000);
+
+});
+
+    myPromise.then(function (res) {
+        alert(res);
+    });
+
+}
+
+</script>
