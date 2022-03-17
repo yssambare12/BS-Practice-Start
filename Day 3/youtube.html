@@ -1,0 +1,110 @@
+<!-- Simple youtube app with here i try to fetch the youtube api and apply debouncing in inputbox , so after adding anything in inputbox its showing 20 search result from youtube free api -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #navbar {
+        display: flex;
+        width: 100%;
+        height: 100px;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(235, 225, 225);
+    }
+    
+    #videos {
+        display: grid;
+        grid-template-columns: repeat(4, 20%);
+        grid-gap: 5%;
+    }
+    
+    #search {
+        margin-top: 25px;
+        color: blue;
+        background-color: white;
+        width: 100px;
+        height: 33px;
+        font-size: 16px;
+        font-weight: 300;
+    }
+    
+    #query {
+        margin-top: 20px;
+        margin-left: 270px;
+        width: 400px;
+        height: 30px;
+    }
+    
+    #logo {
+        padding-top: 20px;
+        margin-left: 30px;
+        border-radius: 20px;
+        width: 120px;
+        height: 50px;
+        text-align: left;
+    }
+
+    .div{
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+
+    <div id="navbar">
+        <div>
+            <img src="https://cdn.mos.cms.futurecdn.net/8gzcr6RpGStvZFA2qRt4v6.jpg" alt="" id="logo">
+        </div>
+        <div>
+            <input type="text" id="query" placeholder="Search">
+            <button id="search" onclick="searchVideos()">Search</button>
+        </div>
+    </div>
+    <div id="videos"></div>
+</body>
+
+</html>
+
+<script>
+    //AIzaSyDGMoVZGErazkRRWPXYUwFRMeqXgjKNmd0
+
+    // https: //youtube.googleapis.com/youtube/v3/search?q=csk&type=videos&key=[YOUR_API_KEY]
+
+    let videos = document.getElementById("videos");
+    async function searchVideos() {
+
+        let query = document.getElementById("query").value;
+        let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=videos&key=AIzaSyCIjxqMPIm9Mrtw2yYp8krLNo5NHdhbKRY&maxResults=20`)
+
+        let data = await res.json();
+        console.log(data);
+        appendVideos(data.items)
+    };
+
+    // video searching code
+
+    function appendVideos(video_data) {
+
+        videos.innerHTML = null;
+        video_data.forEach(({
+            id: {
+                videoId
+            }
+        }) => {
+
+            let div = document.createElement("div");
+
+            div.innerHTML = `<iframe width="300" height="200" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+            div.style.marginTop = "20px";
+            videos.append(div);
+        })
+
+    }
+</script>
