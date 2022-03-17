@@ -1,0 +1,137 @@
+<!-- here i learn and revised my asynk await and dynamically creating div element -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+body{
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        margin-top: 20px;
+        box-shadow:rgb(38, 57, 77) 0px 20px 30px -10px;
+        padding: 20px;
+    }
+
+
+    button {
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 15px;
+        background-color: white;
+        border-radius: 3px;
+        padding: 10px;
+        width: 15%;
+        margin-left: 500px;
+        margin-bottom: 20px;
+    }
+
+    button:hover{
+        background-color: blue;
+        color: white;
+    }
+    
+    #cont {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 20px;
+        grid-template-columns: 25% 25% 25% 25%;
+        color: white;
+        background-color: rgb(253, 218, 143);
+    }
+    
+    img {
+        width: 100%;
+        height: 60%;
+        border-radius: 5%;
+    }
+    
+    #cont>div:hover {
+        background-color: rgb(118, 97, 240);
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+    
+    #cont>div {
+        background-color: rgb(93, 47, 201);
+        margin: 5% 5%;
+        padding: 5% 5%;
+        border-radius: 10px;
+    }
+    
+    h1{
+        text-align: center;
+    }
+
+    input{
+        padding: 10px;
+        width: 30%;
+        margin-left: 400px;
+    }
+</style>
+
+<body>
+    <div id="inputt">
+        <h1>ALL Movies are Here Just Search and Watch Totally Free</h1>
+        <input type="text" id="Title" placeholder="Search Your Movie"><br><br>
+        <button onclick="moviessearch()">Search</button>
+    </div>
+    <div id="cont"></div>
+
+</body>
+
+</html>
+
+
+<script>
+
+//here we create async function for searching movie 
+
+    async function moviessearch() {
+
+        let moviename = document.getElementById("Title").value
+
+        let res = await fetch(`https://www.omdbapi.com/?apikey=f081a309&s=${moviename}`)
+
+        let data = await res.json();
+        showmovies(data.Search);
+        console.log(data.Search);
+
+
+    }
+
+    var container = document.getElementById("cont");
+
+    function showmovies(movie) {
+        container.innerHTML = null
+        movie.forEach(function(movie) {
+
+            let div = document.createElement('div')
+
+            let img = document.createElement('img')
+            img.src = movie.Poster
+
+            let name = document.createElement('p')
+            name.innerText = movie.Title
+
+
+            let year = document.createElement('p')
+            year.innerText = "Year :" + movie.Year
+
+            let imdbID = document.createElement('p')
+            imdbID.innerText = "imdbID :" + movie.imdbID
+
+
+            div.append(img, name, year, imdbID);
+            container.append(div);
+        })
+    }
+</script>
