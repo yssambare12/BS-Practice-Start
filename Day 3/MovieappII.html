@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+      <div class="box">
+        <div><i class="fa fa-bars"></i></div>
+        <div class="div2"><img src="https://campaigns.hotstar.com/test-directory/disney-hotstar-logo.png" class="himg"></div>
+        <div class="div1">TV</div>
+        <div class="div1">Movies</div>
+        <div class="div1">Kids</div>
+        <div class="div1">Sport</div>   
+        <div class="searchbr">
+            <input oninput="debounce(main,1000)" type="text" id="movie" placeholder="Search Your Movie" />
+
+        </div>
+        <div><button class="btn"><b>SUBSCRIBE</b></button> </div>
+        <div class="div11" onclick="loginuser()" id="profile">LOGIN</div>
+    </div>
+    
+    
+    <div id="movies"></div>
+
+    <div class="maindiv">
+            
+        <div id="moviediv">
+
+        </div>
+        <div id="posterdiv">
+
+        </div>
+
+    </div>
+    <div id="section">
+        <div>
+
+            <!-- slider start  -->
+
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                  <div class="numbertext"></div>
+                  <img src="1.png" style="width:100%">
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext"></div>
+                  <img src="2.png" style="width:100%">
+                  <div class="text"></div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext"></div>
+                  <img src="3.png" style="width:100%">
+                  <div class="text"></div>
+                </div>
+                
+                </div>
+                <br>
+                
+                <div style="text-align:center">
+                  <span class="dot"></span> 
+                  <span class="dot"></span> 
+                  <span class="dot"></span> 
+                </div>
+
+            <!-- slider end  -->
+
+
+            <h2>Current Tranding Movies</h2>
+        </div>
+        <div id="container">
+        </div>
+    </div>
+    <div>
+        <div id="showdata">
+        </div>
+</div>
+<div id="userdiv">
+    <div id="signupdiv">
+        <div>
+            <div id="msgdiv"></div>
+            <div>
+                <form class="log" action="" onsubmit="signup(event)"  id="signup-form">
+                    <h2>SignUp</h2>
+                    <label for="">Name</label>
+                    <input class="lb" type="text" id="name" placeholder="Name"/><br>
+                    <label for="">Email</label>
+                    <input class="lb" type="email" id="email" placeholder="Email"/><br>
+                    <label for="">Username</label>
+                    <input class="lb2" type="text" id="username" placeholder="username"/><br>
+                    <label for="">Password</label>
+                    <input class="lb2" type="text" id="password" placeholder="password"/><br>
+                    <label for="">Mobile No</label>
+                    <input class="lb2" type="text" id="mobile" placeholder="Your Favorate No."/><br>
+                    <button class="logbutton">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div id="signindiv">
+            <div>
+                <form action="" onsubmit="login(event)"  id="login-form">
+                    <h2>login</h2>
+                    
+                    <label for="">Username</label>
+                    <input type="text" id="username" placeholder="username"/><br>
+                    <label for="">Password</label>
+                    <input type="text" id="password" placeholder="password"/><br>
+                    <button class="logbutton2">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+    <script src="movieapp.js">
+
+    </script>
+</body>
+</html>
