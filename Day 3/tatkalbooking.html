@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tatkal Booking System</h1>
+    <button onclick="CheckAvailibility()">Book Slot</button>
+    <h3 style="color: red;">Note :- Go To Console and then click on Book slot button you see the how code give us the availability of seat indication with tran name </h3>
+</body>
+</html>
+
+<script>
+
+    // train seat are in form of array
+
+let BtoG = ["Dhoni","Kohli","Rohit","Alan","Groot","Ironman","MrBean","Yogesh"];
+
+let MtoG = ["Dhoni","Kohli","Rohit","Alan","Groot","Ironman","MrBean","Yogesh"];
+
+let PtoG = ["Dhoni","Kohli","Rohit","Alan","Groot","Ironman","MrBean","Yogesh"];
+
+//functtion to check availibility of train seat
+
+async function CheckAvailibility() {
+    let promise = new Promise(function (resolve, reject) {
+        setInterval(function () {
+        if (BtoG.length === 4) {
+            resolve("BtoG is Available");
+        } else if (MtoG.length === 4){
+            resolve("MtoG is availabe");
+        } else if(PtoG === 4){
+            resolve("PtoG is Availabe");
+        }
+    }, 1000);
+});
+
+let res = await promise;
+console.log("res", res);
+}
+
+function cancelTicket() {
+    // cancelation speed is random
+    let cancelling_speed1 = Math.round(Math.random() * 5);
+    let cancelling_speed2 = Math.round(Math.random() * 5);
+    let cancelling_speed3 = Math.round(Math.random() * 2);
+
+    setTimeout(function () {
+        BtoG.pop();
+    }, cancelling_speed1 * 1000);
+    
+    setTimeout(function () {
+        MtoG.pop();
+    }, cancelling_speed2 * 1000);
+    
+    setTimeout(function () {
+        PtoG.pop();
+    }, cancelling_speed3 * 1000);
+    
+    console.log(BtoG, MtoG, PtoG);
+}
+
+let interval = setInterval(cancelTicket, 2000); 
+
+
+</script>
