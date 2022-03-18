@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .desktop, .mobile-landscape, .mobile-portrait, .tablet{
+  display:none;
+}
+
+
+@media screen and (min-width: 960px){
+  .mobile-landscape, .mobile-portrait, .tablet{
+    display:none;
+  }
+  .desktop{
+    display:block; 
+  }
+  body{
+    background:#966ae7;
+  }
+}
+
+@media screen and (max-height: 500px) and (max-width: 960px){
+  .desktop, .mobile-portrait, .tablet{
+    display:none;
+  }
+  .mobile-landscape{
+    display:block; 
+  }
+  body{
+    background:#c00808;
+  }
+}
+
+@media screen and (min-height: 500px) and (max-width:960px){
+  .desktop, .mobile-landscape, .mobile-portrait{
+    display:none;
+  }
+  .tablet{
+    display:block; 
+  }
+  body{
+    background:#1c9b1c;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .desktop, .mobile-landscape, .tablet{
+    display:none;
+  }
+  .mobile-portrait{
+    display:block; 
+  }
+  body{
+    background:#b7d31a;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="desktop">
+        <h1>Desktop View = Width is more than 960px</h1>
+      </div>
+      <div class="tablet">
+        <h1>Tablet View = Width is less than 960px and height is more than 500px</h1>
+      </div>
+      <div class="mobile-landscape">
+        <h1>Mobile View = Height is less than 500px and width is less than 960px</h1>
+      </div>
+      <div class="mobile-portrait">
+        <h1>Mobile portrait: See me when width is less than 500px</h1>
+      </div>
+      
+</body>
+</html>
