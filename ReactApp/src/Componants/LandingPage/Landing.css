@@ -1,0 +1,30 @@
+.LoginCont {
+  display: flex;
+}
+.LoginCont > div > h1 {
+  font-family: "Bungee", cursive;
+  font-size: 5rem;
+  text-align: center;
+  color: #f78259;
+}
+.LoginCont > div {
+  margin: auto;
+}
+.LoginCont > div > p {
+  font-size: 2rem;
+}
+.LoginCont > img {
+  margin-left: 5%;
+}
+.btn {
+  font-family: Consolas, sans-serif;
+  letter-spacing: 2px;
+  border: none;
+  background-color: #282c34;
+  color: #fff;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  border-radius: 5px;
+  margin-top: 2%;
+}
