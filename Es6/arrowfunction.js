@@ -7,7 +7,6 @@ function userdata() {
         let innerFunction = () => {
             console.log(this.age);
         }
-
         innerFunction();
     }
 }
